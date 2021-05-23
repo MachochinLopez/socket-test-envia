@@ -12,9 +12,6 @@
     <!-- Pusher -->
     <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
     <script>
-        // Enable pusher logging - don't include this in production
-        Pusher.logToConsole = true;
-
         // Inicialización Pusher.
         const pusher = new Pusher('4754e68b02307f510c1a', {
             cluster: 'us2'
