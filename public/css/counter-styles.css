@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 10px;
+    background: linear-gradient(
+        to right,
+        #001445 0%,
+        #002a5d 32%,
+        #006b85 66%,
+        #00b3bb 100%
+    );
+}
+
+.counter,
+.new-guide {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1.4rem rgb(59 65 94 / 10%), 0 0 0.6rem rgb(0 0 0 / 7%);
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 1rem;
+}
+
+.counter__logo {
+    width: 10rem;
+}
+
+.counter__value {
+    font-size: 3rem;
+}
+
+.counter__month,
+.new-guide__title {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #00989e;
+}
+
+.counter__month,
+.counter__value,
+.new-guide__title {
+    text-align: center;
+    font-weight: bold;
+}
+
+.new-guide {
+    position: relative;
+}
+
+.--hidden {
+    display: none;
+}
+
+.new-guide__submit {
+    color: white;
+    background-color: #0056b3;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+}
+
+.new-guide__submit:hover {
+    background-color: #1b61ac;
+}
+
+.new-guide__feedback {
+    font-size: 1.4rem;
+}

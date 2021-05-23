@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\ShipmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +14,5 @@ use App\Http\Controllers\NotificationController;
 |
 */
 
-Route::get('/', function () {
-    return view('realtime-counter');
-});
-
-Route::post('/guide-notification', [NotificationController::class, 'guideNotification']);
+Route::get('/', [ShipmentController::class, 'home']);
+Route::post('/shipment', [ShipmentController::class, 'storeExampleShipment'])->name('create_shipment');
