@@ -18,4 +18,4 @@ Route::get('/', function () {
     return view('realtime-counter');
 });
 
-Route::get('/guide-notification', [NotificationController::class, 'guideNotification']);
+Route::post('/guide-notification', [NotificationController::class, 'guideNotification']);
