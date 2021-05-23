@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\GuideNotification;
 use Illuminate\Http\Request;
 
 class NotificationController extends Controller
 {
-    public function guideNotification()
+    public function guideNotification(Request $request)
     {
-        file_put_contents('prueba.txt', 'logrado');
+        event(new GuideNotification());
     }
 }

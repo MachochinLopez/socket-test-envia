@@ -14,7 +14,7 @@
         });
 
         var channel = pusher.subscribe('my-channel');
-        channel.bind('my-event', function(data) {
+        channel.bind('guide-notification', function(data) {
             alert(JSON.stringify(data));
         });
     </script>
