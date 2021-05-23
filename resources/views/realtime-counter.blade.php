@@ -31,7 +31,7 @@
         });
     </script>
     <!-- Estilos -->
-    <link rel="stylesheet" href="{{ asset('css/counter-styles.css') }}">
+    <link rel="stylesheet" href="css/counter-styles.css">
 </head>
 
 <body>
@@ -56,6 +56,6 @@
     </div>
 </body>
 
-<script src="{{ asset('js/submitBehaviour.js') }}"></script>
+<script src="js/submitBehaviour.js"></script>
 
 </html>
