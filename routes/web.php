@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShipmentController;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use App\Http\Controllers\ShipmentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+if (App::environment('production')) {
+    URL::forceScheme('https');
+}
 
 Route::get('/', [ShipmentController::class, 'home']);
 Route::post('/shipment', [ShipmentController::class, 'storeExampleShipment'])->name('create_shipment');
