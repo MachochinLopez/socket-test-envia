@@ -29,20 +29,12 @@ class GuideNotification implements ShouldBroadcast
     /**
      * Create a new event instance.
      *
-     * @param Response $response
+     * @param int $guidesCounter
      * @return void
      */
-    public function __construct(Response $response)
+    public function __construct($guidesCounter)
     {
-        // Convierte en arreglo la respuesta para poder manipularla.
-        $responseInfo = $response->json();
-
-        // Si la respuesta no tuvo errores...
-        if ($responseInfo['meta'] === 'generate') {
-            // Devuelve la cantidad de guías usando el método del Trait
-            // CountsShipments y la guarda en la instancia. 
-            $this->guidesCounter = $this->countShipments();
-        }
+        $this->guidesCounter = $guidesCounter;
     }
 
     /**

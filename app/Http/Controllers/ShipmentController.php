@@ -91,11 +91,36 @@ class ShipmentController extends Controller
         ];
 
         // Hace la llamada a la API para crear un nuevo shipment.
-        $response = Http::withToken('69d3e474f221bf096869846fd44c531977b9917a3e5421b87c7c739403cf3b4b')
+        $response = Http::withToken(env('ENVIA_API_TOKEN'))
             ->post("https://api-test.envia.com/ship/generate", $exampleShipment);
-        // Notifica la generación de un nuevo shipment.
-        event(new GuideNotification($response));
+
+        // Convierte en arreglo la respuesta para poder manipularla.
+        $responseInfo = $response->json();
+
+        // Si la respuesta no tuvo errores...
+        if ($responseInfo['meta'] === 'generate') {
+            // Devuelve la cantidad de guías usando el método del Trait
+            // CountsShipments y la guarda en la instancia. 
+            $guidesCounter = $this->countShipments();
+            // Notifica la generación de un nuevo shipment.
+            event(new GuideNotification($guidesCounter));
+        }
 
         return $response;
+    }
+
+    /**
+     * Webhook que se conecta a la integración con Envia.com y que actualiza
+     * el contador al detectar un cambio de estatus en algún pedido.
+     * 
+     * @return void
+     */
+    public function webhookCall()
+    {
+        // Devuelve la cantidad de guías usando el método del Trait
+        // CountsShipments y la guarda en la instancia. 
+        $guidesCounter = $this->countShipments();
+        // Notifica la generación de un nuevo shipment.
+        event(new GuideNotification($guidesCounter));
     }
 }
