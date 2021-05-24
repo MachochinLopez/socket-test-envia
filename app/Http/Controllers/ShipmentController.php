@@ -67,11 +67,11 @@ class ShipmentController extends Controller
                     "amount" => 1,
                     "type" => "box",
                     "dimensions" => [
-                        "length" => 10000,
-                        "width" => 10000,
-                        "height" => 10000
+                        "length" => 1,
+                        "width" => 1,
+                        "height" => 1
                     ],
-                    "weight" => 188,
+                    "weight" => 1,
                     "insurance" => 100,
                     "declaredValue" => 100,
                     "weightUnit" => "KG",
