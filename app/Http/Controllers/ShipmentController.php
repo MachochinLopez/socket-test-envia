@@ -121,6 +121,6 @@ class ShipmentController extends Controller
         // CountsShipments y la guarda en la instancia. 
         $guidesCounter = $this->countShipments();
         // Notifica la generación de un nuevo shipment.
-        event(new GuideNotification($guidesCounter + 1));
+        event(new GuideNotification($guidesCounter));
     }
 }
